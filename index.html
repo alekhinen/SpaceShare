@@ -18,26 +18,89 @@
 
        <!-- Stylesheets -->
        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/layout.css">
+       <link rel="stylesheet" type="text/css" href="/assets/stylesheets/header.css">
+       <link rel="stylesheet" type="text/css" href="/assets/stylesheets/footer.css">
+       <link rel="stylesheet" type="text/css" href="/assets/stylesheets/imageCarousel.css">
        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/index.css">
 
        <title>SpaceShare</title>
    </head> 
    <body>
+      <div class = "wrapper">
         <!-- Header -->
         <div class = "header">
-          <a href = "/">
-          <img src = "/assets/icons/logo.svg" id = "logo"/>
+          <a href = "/" class = "logo">
+            <img src = "/assets/icons/logo.svg" class = "logo"/>
           </a>
-        </div>
-        
-        <!-- Meat -->
-        <div class = "meat">
-        
+
+          <ul class = "nav pull-right">
+            <li><a href = "#">Sign Up</a></li>
+            <li><a href = "#">Log In</a></li>
+            <li><a href = "#">List A Space</a></li>
+          </ul>
+
+          <div class = "clear"></div>
+
         </div>
 
-        <!-- Footer -->
-        <div class = "footer">
-          
+        <!-- Image Carousel -->
+        <div class = "imageCarouselContainer">
+          <div class = "contentContainer">
+            <h1>Find your studio space today.</h1>
+          </div>
+          <img src = "/assets/images/warehouse.jpg" style = "width: 100%;margin-top: -360px;"/>
         </div>
+        
+
+        <div class = "padder20"></div>
+
+        <!-- Meat -->
+        <div class = "meat">
+          <h1>Neighborhoods</h1>
+          <p>Not sure where to go? Here's a selection of popular locations to rent your studio.</p>
+
+          <div class = "padder20"></div>
+
+          <div class = "neighborhoodContainer">
+            Boston
+          </div>
+
+          <div class = "neighborhoodContainer">
+            New York
+          </div>
+
+          <div class = "neighborhoodContainer last">
+            Seattle
+          </div>
+
+          <div class = "clear"></div>
+
+          <div class = "neighborhoodContainer">
+            PortLand
+          </div>
+
+          <div class = "neighborhoodContainer">
+            San Francisco
+          </div>
+
+          <div class = "neighborhoodContainer last">
+            Chicago
+          </div>
+          
+          <div class = "clear"></div>
+
+          <center>
+            <a href = "#">View All Neighborhoods</a>
+          </center>
+
+        </div>
+        <div class = "padder20"></div>
+        <div class = "push"></div>
+      </div>
+
+      <!-- Footer -->
+      <footer>
+        
+      </footer>
    </body>
 </html>

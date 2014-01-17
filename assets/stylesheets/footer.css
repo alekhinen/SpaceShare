@@ -1,0 +1,13 @@
+footer {
+    border-top:1px solid #A9ABAD;
+    position:relative;
+    width:100%;
+    min-width:1100px;
+    background-color: #DADBDE;
+
+    height:100px;
+}
+
+footer, .push {
+    height:155px; /* '.push' must be the same height as 'footer' */
+}
