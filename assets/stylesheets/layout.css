@@ -39,12 +39,25 @@ html, body {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 auto -156px; /* the bottom margin is the negative value of the footer's height */
 }
+
+
+
+
+
+/* FONTS *********************************************************************/
 
 h1 {
     color: #3B424D;
     font-size:24px;
+}
+
+h1.big {
+    font-weight: 100;
+    font-size: 50px;
+    line-height: initial;
+    border-bottom: 1px solid;
 }
 
 p {
@@ -61,6 +74,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+
+
 
 
 /* IMAGES ********************************************************************/
