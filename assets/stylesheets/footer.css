@@ -9,5 +9,47 @@ footer {
 }
 
 footer, .push {
-    height:155px; /* '.push' must be the same height as 'footer' */
+    height:180px; /* '.push' must be the same height as 'footer' */
 }
+
+.footerCenter {
+    width:1100px;
+    margin:auto;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+    .footerCenter .lefty {
+        float: left;
+        width: 163px;
+        margin-right:40px;
+    }
+
+        #logoGray {
+            display:block;
+            width:150px;
+        }
+
+    .footerLinks {
+        float: left;
+        margin-top: 15px;
+        min-width: 130px;
+    }
+
+    .footerLinks h5 {
+        font-size: 12px;
+        font-weight: bold;
+        color: #306E73;
+        margin:0px;
+    }
+
+        .footerLinks h5 a {
+            font-size:inherit;
+            color:inherit;
+        }
+
+    .footerLinks p {
+        font-size: 11px;
+        font-weight: bold;
+        margin:0px;
+    }
