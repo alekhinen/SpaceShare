@@ -11,7 +11,7 @@
         <!-- Base Head Elements -->
         <?php include_once($path . "/views/partials/baseCSS.php") ?>
 
-       <title>About</title>
+       <title>404</title>
    </head> 
    <body>
       <div class = "wrapper">
@@ -21,10 +21,7 @@
 
         <!-- Meat -->
         <div class = "meat">
-          <h1 class = "big">About</h1>
-          <p>
-            SpaceShare is a space sharing application targeted for individuals who need to rent out studio or industrial space for their own projects/desires. The target demographic are artists and designers who do not have their own space to build their projects. The idea is to have sharable and rentable spaces across major metropolitan areas. The studios can be rented out for days or weeks. Users can find spaces themselves or search from a user-generated set of listings.
-          </p>
+          <h1 class = "big">You got 404'd</h1>
 
         </div>
         <div class = "padder20"></div>

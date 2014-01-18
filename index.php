@@ -41,7 +41,7 @@
           <div class = "padder20"></div>
 
           <div class = "neighborhoodContainer">
-            <a href = "/views/neighborhoods/featured.php#boston">
+            <a href = "/views/neighborhoods/index.php#boston">
               <div class = "infoContainer">
                 <h2>Boston</h2>
               </div>
@@ -50,7 +50,7 @@
           </div>
 
           <div class = "neighborhoodContainer">
-            <a href = "/views/neighborhoods/featured.php#newyork">
+            <a href = "/views/neighborhoods/index.php#newyork">
               <div class = "infoContainer">
                 <h2>New York</h2>
               </div>
@@ -59,7 +59,7 @@
           </div>
 
           <div class = "neighborhoodContainer last">
-            <a href = "/views/neighborhoods/featured.php#seattle">
+            <a href = "/views/neighborhoods/index.php#seattle">
               <div class = "infoContainer">
                 <h2>Seattle</h2>
               </div>
@@ -70,7 +70,7 @@
           <div class = "clear"></div>
 
           <div class = "neighborhoodContainer">
-            <a href = "/views/neighborhoods/featured.php#portland">
+            <a href = "/views/neighborhoods/index.php#portland">
               <div class = "infoContainer">
                 <h2>Portland</h2>
               </div>
@@ -79,7 +79,7 @@
           </div>
 
           <div class = "neighborhoodContainer">
-            <a href = "/views/neighborhoods/featured.php#sanfrancisco">
+            <a href = "/views/neighborhoods/index.php#sanfrancisco">
               <div class = "infoContainer">
                 <h2>San Francisco</h2>
               </div>
@@ -88,7 +88,7 @@
           </div>
 
           <div class = "neighborhoodContainer last">
-            <a href = "/views/neighborhoods/featured.php#chicago">
+            <a href = "/views/neighborhoods/index.php#chicago">
               <div class = "infoContainer">
                 <h2>Chicago</h2>
               </div>
