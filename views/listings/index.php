@@ -22,7 +22,7 @@
         <!-- Meat -->
         <div class = "meat">
           <h1 class = "big">Studio Listings</h1>
-
+          <p>Coming soon...</p>
         </div>
         <div class = "padder20"></div>
         <div class = "push"></div>

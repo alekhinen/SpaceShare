@@ -23,7 +23,11 @@
         <!-- Meat -->
         <div class = "meat">
           <h1 class = "big">Contact</h1>
-
+          <p>
+            Feel free to contact us at <b>(555) 555-5555</b> or email us at 
+            <br>
+            <a href = "#">info[at]nickalekhine.com</a>
+          </p>
         </div>
         <div class = "padder20"></div>
         <div class = "push"></div>
