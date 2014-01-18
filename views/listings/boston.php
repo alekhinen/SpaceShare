@@ -38,7 +38,7 @@
 
           <h1>Listings</h1>
           <div class = "studioListing">
-            
+            No listings available. :(
           </div>
 
         </div>

@@ -31,14 +31,14 @@
           </div>
           
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur orci ut lacus aliquet eleifend. Donec facilisis porttitor mi, vel rhoncus tortor tincidunt quis. Pellentesque eleifend bibendum malesuada. Ut sagittis dictum dolor cursus commodo. Sed suscipit varius consequat. Morbi placerat mauris condimentum, tincidunt est ac, dignissim neque. Nullam congue elit purus, eget condimentum orci consectetur et. Vestibulum vehicula metus sit amet euismod eleifend. Donec fermentum erat ac volutpat viverra. Ut a nisi facilisis dolor commodo interdum quis sed libero. Cras ac sem posuere, venenatis turpis sed, tincidunt nisl.
+            Nunc dapibus sed libero ac consectetur. Sed porttitor sed tellus eu gravida. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tellus lorem, sagittis eget magna dapibus, rhoncus posuere est. Sed viverra lacus ligula, sed dictum massa tristique quis. Vestibulum posuere dolor ut cursus ultricies. Ut volutpat enim at urna laoreet, nec ullamcorper tortor ultricies. Ut fringilla ante sit amet justo lobortis, vitae tempor sapien sodales. Vivamus sollicitudin, nunc et sodales viverra, turpis eros sollicitudin eros, vel congue enim lorem vitae tellus. Nunc justo leo, scelerisque ac sollicitudin eget, euismod a ipsum. Etiam placerat urna nec nisl gravida, consequat bibendum eros sodales. Donec elit nulla, suscipit eget tincidunt a, imperdiet vel est. Vestibulum volutpat ultricies semper.
           </p>
 
           <div class = "padder20"></div>
 
           <h1>Listings</h1>
           <div class = "studioListing">
-            
+            No listings available. :(
           </div>
 
         </div>
