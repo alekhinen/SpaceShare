@@ -9,7 +9,7 @@
 <html lang="en">
    <head>
       <!-- Base Head Elements -->
-      <?php include_once($path . "/views/partials/baseCSS.php") ?>
+      <?php include_once($path . "/views/partials/baseHead.php") ?>
 
        <title>Studio Listings</title>
    </head> 

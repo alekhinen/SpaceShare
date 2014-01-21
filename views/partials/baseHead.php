@@ -15,3 +15,6 @@
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/layout.css">
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/header.css">
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/footer.css">
+
+<!-- Scripts -->
+<script language="javascript" type="text/javascript" src="/assets/javascripts/jquery-2.0.3.min.js"></script>

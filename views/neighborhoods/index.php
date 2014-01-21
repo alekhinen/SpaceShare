@@ -9,7 +9,7 @@
 <html lang="en">
    <head>
       <!-- Base Head Elements -->
-      <?php include_once($path . "/views/partials/baseCSS.php") ?>
+      <?php include_once($path . "/views/partials/baseHead.php") ?>
 
       <!-- Stylesheet specific to page -->
       <link rel="stylesheet" type="text/css" href="/assets/stylesheets/neighborhoods.css">

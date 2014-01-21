@@ -9,11 +9,14 @@
 <html lang="en">
    <head>
       <!-- Base Head Elements -->
-      <?php include_once($path . "/views/partials/baseCSS.php") ?>
+      <?php include_once($path . "/views/partials/baseHead.php") ?>
       
       <!-- Stylesheet specific to page -->
       <link rel="stylesheet" type="text/css" href="/assets/stylesheets/imageCarousel.css">
       <link rel="stylesheet" type="text/css" href="/assets/stylesheets/index.css">
+
+      <!-- Scripts specific to page -->
+      <script language="javascript" type="text/javascript" src="/assets/javascripts/imageCarousel.js"></script>
 
       <title>SpaceShare</title>
    </head> 
@@ -26,10 +29,66 @@
 
         <!-- Image Carousel -->
         <div class = "imageCarouselContainer">
-          <div class = "contentContainer">
-            <h1>Find your studio space today.</h1>
+          <!-- Buttons -->
+          <div class = "buttonsContainer">
+            <!-- Button Left -->
+            <div class = "button" id = "btnLeft" style = "float:left;">
+              <img src = "/assets/icons/arrow_left_white.svg" style = "margin-left: -35px;"/>
+            </div>
+            <!-- Button Right -->
+            <div class = "button" id = "btnRight" style = "float:right;">
+              <img src = "/assets/icons/arrow_right_white.svg" style = "margin-left: -40px;"/>
+            </div>
           </div>
-          <img src = "/assets/images/warehouse.jpg" style = "width: 100%;margin-top: -360px;min-width:1400px"/>
+
+          <!-- Main Form -->
+          <div class = "formContainer">
+            <h1>Find your studio space today.</h1>
+            <p>
+              Price Range [low - high]
+              <br>
+              Location [dropdown menu]
+              <br>
+              Square feet [low - high]
+              <br>
+              When to rent out
+              <br>
+              Search button
+            </p>
+          </div>
+
+          <!-- Main section for content -->
+          <div id = "imageCarousel">
+            <!-- Content Slide 1 -->
+            <div class = "contentContainer">
+              <img src = "/assets/images/featuredNeighborhoods/sanFranciscoSkyline.jpg"/>
+              <div class = "infoPane">
+                <h3>San Francisco</h3>
+                <p>Details....</p>
+              </div>
+            </div>
+
+            <!-- Content Slide 2 -->  
+            <div class = "contentContainer">
+              <img src = "/assets/images/warehouse.jpg" style = "margin-top: -360px;min-width:1400px"/>
+              <div class = "infoPane">
+                <h3>Boston Studio</h3>
+                <p>Details....</p>
+              </div>
+            </div>  
+          
+
+            <!-- Content Slide 3 -->  
+            <div class = "contentContainer">
+              <img src = "/assets/images/featuredNeighborhoods/seattleSkyline.jpg"/>
+                <div class = "infoPane">
+                  <h3>swag</h3>
+                  <p>Details....</p>
+                </div>
+            </div>  
+          </div>
+          
+          
         </div>
         
 
