@@ -10,7 +10,7 @@
         <br>
         <br>
         Feel free to look at the source of this site on 
-        <a href = "https://github.com/alekhinen/SpaceShare">Github</a>.
+        <a href = "https://github.com/alekhinen/SpaceShare" target="_blank">Github</a>.
       </h6>
     </div>
 
