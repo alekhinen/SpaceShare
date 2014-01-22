@@ -82,7 +82,7 @@
             <div class = "contentContainer">
               <img src = "/assets/images/featuredNeighborhoods/seattleSkyline.jpg"/>
                 <div class = "infoPane">
-                  <h3>swag</h3>
+                  <h3>Seattle</h3>
                   <p>Details....</p>
                 </div>
             </div>  

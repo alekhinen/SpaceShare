@@ -1,0 +1,17 @@
+/*
+ * The Musket Font is provided by the vendor below.
+ * @vendor: Bü! Estudio Gráfico
+ * @url:    http://bybu.es/portfolio/musket/
+ *
+ */
+
+@font-face {
+    font-family: 'Musket';
+    src: url('/assets/fonts/musket_regular.otf');
+}
+
+@font-face {
+    font-family: 'Musket';
+    src: url('/assets/fonts/musket_bold.otf');
+    font-weight:bold;   
+}
