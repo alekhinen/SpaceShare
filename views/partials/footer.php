@@ -44,6 +44,12 @@
       </h5>
     </div>
 
+    <div class = "footerLinks">
+      <h5>
+        <a href = "/views/page/credits.php">Credits</a>
+      </h5>
+    </div>
+
     <div class = "clear"></div>
   </div>
 </footer>
