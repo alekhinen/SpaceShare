@@ -57,7 +57,23 @@
             </div>
           </div>
           <div class = "clear"></div>
-          
+
+          <form id = "costCalculator">
+            <h5>Move-In Date</h5>
+            <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
+            <div class = "clear"></div>
+            <br>
+
+            <h5>Move-Out Date</h5>
+            <input class = "input-control input-sm " type="date" name="moveOut" placeholder = "MM/DD/YYYY">
+            <div class = "clear"></div>
+            <br>
+
+            <div class = "btn btn-primary" style = "float:right;width:263px;">
+              Calculate!
+            </div>
+            <div class = "clear"></div>
+          </form>
 
         </div>
         <div class = "padder20"></div>
