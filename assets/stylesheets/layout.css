@@ -123,5 +123,55 @@ img.logo {
         opacity:.5;
     }
 
+/* BUTTONS ********************************************************************/
+.btn {
+    border: none;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.4;
+    padding: 10px 15px;
+
+
+    max-width: 235px;
+    text-align: center;
+    border-radius: 0px;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-transition: 0.25s linear;
+    transition: 0.25s linear;
+}
+.btn:hover,
+.btn:focus {
+    color: #ffffff;
+    cursor:pointer;
+}
+.btn:active,
+.btn.active {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+    a.nothing {
+        font-weight:normal;
+        color:inherit;
+        text-decoration: none !important;
+    }
+
+    /* Specific button colors */
+    .btn-primary {
+      color: #ffffff;
+      background-color: #1abc9c;
+      border: 1px solid #1abc9c;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open .dropdown-toggle.btn-primary {
+      color: #ffffff;
+      background-color: #48c9b0;
+      border-color: #48c9b0;
+    }
+
 
 

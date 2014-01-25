@@ -36,10 +36,8 @@
 
           <div class = "padder20"></div>
 
-          <h1>Listings</h1>
-          <div class = "studioListing">
-            No listings available. :(
-          </div>
+          <!-- The listings table -->
+          <?php include_once($path . '/views/listings/boston/_table.php') ?>
 
         </div>
         <div class = "padder20"></div>
