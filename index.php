@@ -44,6 +44,7 @@
           <!-- Main Form -->
           <div class = "formContainer">
             <h1>Find your studio space today.</h1>
+            <!--
             <p>
               Price Range [low - high]
               <br>
@@ -55,6 +56,7 @@
               <br>
               Search button
             </p>
+            -->
           </div>
 
           <!-- Main section for content -->
@@ -62,29 +64,32 @@
             <!-- Content Slide 1 -->
             <div class = "contentContainer">
               <img src = "/assets/images/featuredNeighborhoods/sanFranciscoSkyline.jpg"/>
-              <div class = "infoPane">
-                <h3>San Francisco</h3>
-                <p>Details....</p>
-              </div>
+              <a class = "nothing" href = "/views/neighborhoods/index.php#sanfrancisco">
+                <div class = "infoPane">
+                  <h3>San Francisco</h3>
+                </div>
+              </a>
             </div>
 
             <!-- Content Slide 2 -->  
             <div class = "contentContainer">
               <img src = "/assets/images/warehouse.jpg" style = "margin-top: -360px;min-width:1400px"/>
-              <div class = "infoPane">
-                <h3>Boston Studio</h3>
-                <p>Details....</p>
-              </div>
+              <a class = "nothing" href = "/views/listings/boston/show.php">
+                <div class = "infoPane">
+                  <h3>Boston Studio</h3>
+                </div>
+              </a>
             </div>  
           
 
             <!-- Content Slide 3 -->  
             <div class = "contentContainer">
               <img src = "/assets/images/featuredNeighborhoods/seattleSkyline.jpg"/>
-                <div class = "infoPane">
-                  <h3>Seattle</h3>
-                  <p>Details....</p>
-                </div>
+                <a class = "nothing" href = "/views/neighborhoods/index.php#seattle">
+                  <div class = "infoPane">
+                    <h3>Seattle</h3>
+                  </div>
+                </a>
             </div>  
           </div>
           
