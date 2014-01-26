@@ -30,7 +30,7 @@
             <img src = "/assets/images/warehouse.jpg"/>
           </div>
           <div class = "imgNavigation">
-              ...
+            <!-- Placeholder for when image navigation gets added here. -->
           </div>
 
           <div class = "textContent">
@@ -52,7 +52,19 @@
             <div class = "description">
                 <h3>Description</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae leo vel lectus vehicula venenatis a sit amet enim. Aliquam vel iaculis lacus, quis dapibus arcu. In posuere, magna et aliquam accumsan, mauris nibh euismod dolor, eu hendrerit nunc nisl quis purus. Ut sit amet aliquet mi. Phasellus vestibulum rutrum tortor, luctus adipiscing odio consequat sed. Etiam placerat dui vitae lacus blandit faucibus. Aliquam congue turpis ac dignissim rhoncus. Maecenas non mi in nunc pretium posuere sed eu eros. Fusce quis ultricies leo, a vulputate risus. Donec quis tellus quis felis consectetur condimentum sed porttitor massa. Praesent vel mauris quis dui pellentesque venenatis in ut nunc. Sed eget nisl at dui luctus facilisis. Cras ut pharetra elit. Aenean eleifend dolor sed neque varius fringilla. In quam nulla, malesuada et elit et, accumsan fringilla est.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Quisque vitae leo vel lectus vehicula venenatis a sit amet enim. 
+                    Aliquam vel iaculis lacus, quis dapibus arcu. In posuere, magna et 
+                    aliquam accumsan, mauris nibh euismod dolor, eu hendrerit nunc nisl 
+                    quis purus. Ut sit amet aliquet mi. Phasellus vestibulum rutrum tortor, 
+                    luctus adipiscing odio consequat sed. Etiam placerat dui vitae lacus 
+                    blandit faucibus. Aliquam congue turpis ac dignissim rhoncus. Maecenas 
+                    non mi in nunc pretium posuere sed eu eros. Fusce quis ultricies leo, 
+                    a vulputate risus. Donec quis tellus quis felis consectetur condimentum 
+                    sed porttitor massa. Praesent vel mauris quis dui pellentesque venenatis 
+                    in ut nunc. Sed eget nisl at dui luctus facilisis. Cras ut pharetra elit. 
+                    Aenean eleifend dolor sed neque varius fringilla. In quam nulla, malesuada 
+                    et elit et, accumsan fringilla est.
                 </p>
             </div>
           </div>
@@ -61,6 +73,10 @@
           <form id = "costCalculator">
             <h2>Calculate Your Total Cost</h2>
             <br>
+            <h5>Rental Rate</h5>
+            <p class = "cost">$19 / day</p>
+            <div class = "clear"></div>
+
             <h5>Move-In Date</h5>
             <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
             <div class = "clear"></div>
@@ -75,6 +91,10 @@
               Calculate!
             </div>
             <div class = "clear"></div>
+
+            <div id = "computedCost">
+                
+            </div>
           </form>
 
         </div>
@@ -82,9 +102,24 @@
         <div class = "push"></div>
       </div>
 
+      <!-- 
+      NOTICE:
+      This script (and associated CSS which can be found in /assets/stylesheets/layout.css) will be separated
+      out into a JS file and a CSS file for modularities sake. I will not perform the move until I start 
+      creating the back-end in PHP and MySQL. 
+       -->
       <script>
         $(document).ready(function() {
 
+            /** 
+             * To calculate the difference between the two given date arrays.
+             * @param moveIn int[] - Array of a date broken up into Year, Month, Day
+             * @param moveOut int[] - Array of a date broken up into Year, Month, Day
+             * @return int - represents difference between two dates in days
+             *
+             * @version 2014-01-26
+             * @author Nick Alekhine
+             */
             var daysBetween = function(moveIn, moveOut) {
                 var result = 0;
 
@@ -106,15 +141,25 @@
                 return result;
             }
 
+            /** 
+             * Displays the cost of the rental. 
+             */
             $("#calculate").click(function() {
+                // pull data from the form
                 var moveIn = $('input[name="moveIn"]').val();
                 moveIn = moveIn.split("-");
                 var moveOut = $('input[name="moveOut"]').val();
                 moveOut = moveOut.split("-")
 
-                var result = daysBetween(moveIn, moveOut);
+                // calculate the cost
+                var totalDays = daysBetween(moveIn, moveOut);
+                var dailyRate = 19;
+                var result = totalDays * dailyRate;
 
-                alert(moveIn[0] + " " + moveOut + " " + result);
+                // clears the div
+                $("#computedCost").empty();
+                // append the calculated cost to the div
+                $("<p>Your total cost is: $" + result + " </p>").appendTo("#computedCost");
             }); 
         });
       </script>

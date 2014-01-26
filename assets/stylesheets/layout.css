@@ -198,6 +198,18 @@ img.logo {
         margin-top: 10px;
     }
 
+    #costCalculator p.cost {
+        float: right;
+        font-size: 14px;
+        height: 35px;
+        padding: 0px;
+        width: 263px;
+        margin: 0px;
+        font-weight: bold;
+        padding-top: 10px;
+        color: #FF5335;
+    }
+
     #costCalculator input {
         float:right;
     }
