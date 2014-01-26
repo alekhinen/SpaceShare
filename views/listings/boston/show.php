@@ -59,6 +59,8 @@
           <div class = "clear"></div>
 
           <form id = "costCalculator">
+            <h2>Calculate Your Total Cost</h2>
+            <br>
             <h5>Move-In Date</h5>
             <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
             <div class = "clear"></div>
@@ -69,7 +71,7 @@
             <div class = "clear"></div>
             <br>
 
-            <div class = "btn btn-primary" style = "float:right;width:263px;">
+            <div id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;">
               Calculate!
             </div>
             <div class = "clear"></div>
@@ -79,6 +81,43 @@
         <div class = "padder20"></div>
         <div class = "push"></div>
       </div>
+
+      <script>
+        $(document).ready(function() {
+
+            var daysBetween = function(moveIn, moveOut) {
+                var result = 0;
+
+                // separate moveIn date
+                var moveInYear = moveIn[0];
+                var moveInMonth = moveIn[1];
+                var moveInDay = moveIn[2];
+
+                // separate moveOut date
+                var moveOutYear = moveOut[0];
+                var moveOutMonth = moveOut[1];
+                var moveOutDay = moveOut[2];
+
+                // calculate the amount of days inbetween moveOut and moveIn
+                result += moveOutDay - moveInDay;
+                result += (moveOutMonth - moveInMonth) * 30; // 30 is a rough estimate.
+                result += (moveOutYear - moveInYear) * 365;
+
+                return result;
+            }
+
+            $("#calculate").click(function() {
+                var moveIn = $('input[name="moveIn"]').val();
+                moveIn = moveIn.split("-");
+                var moveOut = $('input[name="moveOut"]').val();
+                moveOut = moveOut.split("-")
+
+                var result = daysBetween(moveIn, moveOut);
+
+                alert(moveIn[0] + " " + moveOut + " " + result);
+            }); 
+        });
+      </script>
 
       <!-- Footer -->
       <?php include_once($path . '/views/partials/footer.php'); ?>

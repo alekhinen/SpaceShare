@@ -171,8 +171,8 @@ img.logo {
     /* Specific button colors */
     .btn-primary {
       color: #ffffff;
-      background-color: #1abc9c;
-      border: 1px solid #1abc9c;
+      background-color: #14A697;
+      border: 1px solid #14A697;
     }
     .btn-primary:hover,
     .btn-primary:focus,
@@ -180,8 +180,8 @@ img.logo {
     .btn-primary.active,
     .open .dropdown-toggle.btn-primary {
       color: #ffffff;
-      background-color: #48c9b0;
-      border-color: #48c9b0;
+      background-color: #076C61;
+      border-color: #076C61;
     }
 
 /* INPUTS ********************************************************************/
@@ -234,7 +234,7 @@ textarea.input-sm {
 }
 .input-group.focus .input-control,
 .input-control:focus {
-    border-color: #1abc9c;
+    border-color: #14A697;
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
