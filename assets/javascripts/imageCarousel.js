@@ -71,7 +71,7 @@ $(function() {
     });
 
     // TODO
-    // we need to somehow reset the interval every singl time a button is 
+    // we need to somehow reset the interval every single time a button is 
     // clicked. if we leave it as it is there will be times when the click
     // and the interval will occur simultaneously and bad things will
     // happen. 
