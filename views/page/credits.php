@@ -24,8 +24,20 @@
           <h1 class = "big">Credits</h1>
           <p>
             <b>Technologies Used:</b>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+              <li>JQuery</li>
+              <li>MAMP</li>
+            </ul>
             <br>
             <b>Sources Used:</b>
+            <ul>
+              <li><a href = "https://github.com/designmodo/Flat-UI">Flat UI</a> (used for buttons and inputs)</li>
+              <li><a href = "http://www.tripadvisor.com/">Trip Advisor</a> (for photos)</li>
+              <li><a href = "http://iconmonstr.com/">Icon Monstr</a> (for icon in logo)</li>
+            </ul>
           </p>
 
         </div>
