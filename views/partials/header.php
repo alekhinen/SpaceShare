@@ -10,8 +10,8 @@
   </ul>
 
   <ul class = "nav pull-right">
-    <li><a href = "#">Sign Up</a></li>
-    <li><a href = "#">Log In</a></li>
+    <li><a href = "/views/user/signup.php">Sign Up</a></li>
+    <li><a href = "/views/user/login.php">Log In</a></li>
     <li><a href = "#">List A Space</a></li>
   </ul>
 
