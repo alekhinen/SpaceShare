@@ -97,7 +97,7 @@
             </div>
           </form>
 
-          <form id = "requestSpace" style = "float:right;width:420px">
+          <form action="requestSpace.php" id = "requestSpace" style = "float:right;width:420px">
             <h2>Request This Space</h2>
             <br>
             <h5>Rental Rate</h5>
@@ -134,9 +134,7 @@
             <div class = "clear"></div>
             <br>
 
-            <div id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;">
-              Submit
-            </div>
+            <input type = "submit" id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;"/>
             <div class = "clear"></div>
 
             <div id = "computedCost">
