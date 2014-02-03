@@ -184,21 +184,36 @@ img.logo {
       border-color: #076C61;
     }
 
+
+    .btn-secondary {
+      color: #ffffff;
+      background-color: #FF5335;
+      border: 1px solid #FF5335;
+    }
+    .btn-secondary:hover,
+    .btn-secondary:focus,
+    .btn-secondary:active,
+    .btn-secondary.active,
+    .open .dropdown-toggle.btn-secondary {
+      color: #ffffff;
+      background-color: #BA3118;
+      border-color: #BA3118;
+    }
+
 /* INPUTS ********************************************************************/
-#costCalculator {
+form {
     padding: 40px;
     width: 500px;
     margin: 20px auto;
     background-color: #DADBDE;
     border: 1px solid #A9ABAD;
 }
-
-    #costCalculator h5 {
+    form h5 {
         float: left;
         margin-top: 10px;
     }
 
-    #costCalculator p.cost {
+    form p.cost {
         float: right;
         font-size: 14px;
         height: 35px;
@@ -210,9 +225,16 @@ img.logo {
         color: #FF5335;
     }
 
-    #costCalculator input {
+    form input {
         float:right;
     }
+
+
+#costCalculator {
+    width: 420px;
+}
+
+
 
 .input-sm {
     padding: 6px 10px;

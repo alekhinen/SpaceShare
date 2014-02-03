@@ -30,7 +30,7 @@
             <br>
 
             <h5>Email</h5>
-            <input class = "input-control input-sm " type="text" name="email">
+            <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
             <div class = "clear"></div>
             <br>
 

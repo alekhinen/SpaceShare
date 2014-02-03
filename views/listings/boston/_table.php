@@ -37,6 +37,10 @@
     <div class = "btn btn-primary">
       <a href = "show.php" class = "nothing">View Listing</a>
     </div>
+    <br>
+    <div class = "btn btn-secondary">
+      <a href = "show.php" class = "nothing">Request This Space</a>
+    </div>
   </center>
 
 </div>

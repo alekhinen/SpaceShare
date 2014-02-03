@@ -70,7 +70,7 @@
           </div>
           <div class = "clear"></div>
 
-          <form id = "costCalculator">
+          <form id = "costCalculator" style = "float:left;">
             <h2>Calculate Your Total Cost</h2>
             <br>
             <h5>Rental Rate</h5>
@@ -96,6 +96,54 @@
                 
             </div>
           </form>
+
+          <form id = "requestSpace" style = "float:right;width:420px">
+            <h2>Request This Space</h2>
+            <br>
+            <h5>Rental Rate</h5>
+            <p class = "cost">$19 / day</p>
+            <div class = "clear"></div>
+
+            <h5>Move-In Date</h5>
+            <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
+            <div class = "clear"></div>
+            <br>
+
+            <h5>Move-Out Date</h5>
+            <input class = "input-control input-sm " type="date" name="moveOut" placeholder = "MM/DD/YYYY">
+            <div class = "clear"></div>
+            <br>
+
+            <h5>Email</h5>
+            <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
+            <div class = "clear"></div>
+            <br>
+
+            <h5>First Name</h5>
+            <input class = "input-control input-sm " type="text" name="firstName" placeholder = "John">
+            <div class = "clear"></div>
+            <br>
+
+            <h5>Last Name</h5>
+            <input class = "input-control input-sm " type="text" name="lastName" placeholder = "Appleseed">
+            <div class = "clear"></div>
+            <br>
+
+            <h5>Phone Number</h5>
+            <input class = "input-control input-sm " type="text" name="lastName" placeholder = "555-555-5555">
+            <div class = "clear"></div>
+            <br>
+
+            <div id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;">
+              Submit
+            </div>
+            <div class = "clear"></div>
+
+            <div id = "computedCost">
+                
+            </div>
+          </form>
+          <div class = "clear"></div>
 
         </div>
         <div class = "padder20"></div>
