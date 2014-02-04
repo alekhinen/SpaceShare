@@ -25,7 +25,7 @@
         <!-- Meat -->
         <div class = "meat">
           <div class = "padder20"></div>
-          <form id = "login">
+          <form name = "login" onsubmit="return validateForm()" action = "#" method = "post">
             <h2>Login</h2>
             <br>
 
@@ -39,9 +39,7 @@
             <div class = "clear"></div>
             <br>
 
-            <div id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;">
-              Login
-            </div>
+            <input type = "submit" value = "Login" class = "btn btn-primary" style = "width:263px;"/>
             <div class = "clear"></div>
         </form>
       </div>
@@ -53,3 +51,46 @@
     <?php include_once($path . '/views/partials/footer.php'); ?>
   </body>
 </html>
+
+<script type="text/javascript">
+  /** Various functions for form validation */
+  $(document).ready(function() {
+    // Remove the error class when focusing on email input
+    $("input[name='email']").focus(function() {
+      $(this).removeClass("has-error");
+    });
+
+    // Remove the error class when focusing on password input
+    $("input[name='password']").focus(function() {
+      $(this).removeClass("has-error");
+    });
+  });
+
+
+  /** 
+   * To determine if every required input has been filled correctly.
+   * 
+   * @author Nick Alekhine
+   * @version 2014-02-04
+   * 
+   */
+  function validateForm() {
+    var hasErrors = false;
+    var email = document.forms["login"]["email"].value;
+    var password = document.forms["login"]["password"].value;
+
+    if (email == null || email == "") {
+      $("input[name='email']").addClass("has-error");
+      hasErrors = true;
+    }
+    if (password == null || password == "") {
+      $("input[name='password']").addClass("has-error");
+      hasErrors = true;
+    }
+
+    return !hasErrors;
+  }
+</script>
+
+
+

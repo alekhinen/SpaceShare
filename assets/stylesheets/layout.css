@@ -200,6 +200,21 @@ img.logo {
       border-color: #BA3118;
     }
 
+
+    .btn-danger {
+      color: #ffffff;
+      background-color: #e74c3c;
+    }
+    .btn-danger:hover,
+    .btn-danger:focus,
+    .btn-danger:active,
+    .btn-danger.active,
+    .open .dropdown-toggle.btn-danger {
+      color: #ffffff;
+      background-color: #ec7063;
+      border-color: #ec7063;
+    }
+
 /* INPUTS ********************************************************************/
 form {
     padding: 40px;
@@ -272,4 +287,11 @@ textarea.input-sm {
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+
+.has-error {
+  color: #e74c3c;
+  border-color: #e74c3c;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
