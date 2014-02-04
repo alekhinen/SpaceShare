@@ -54,3 +54,8 @@ Thumbs.db
 
 # Non-minified Bootstrap #
 ##########################
+
+
+# Insecure Files #
+##########################
+/db/connect.php
