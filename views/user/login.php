@@ -14,6 +14,9 @@
         <!-- Page Specific Stylesheets -->
         <link rel="stylesheet" type="text/css" href="/assets/stylesheets/user.css">
 
+        <!-- JQuery Validation -->
+        <script language="javascript" type="text/javascript" src="/assets/javascripts/validation/jquery.validate.min.js"></script>
+
        <title>Login</title>
    </head> 
    <body>
@@ -25,16 +28,16 @@
         <!-- Meat -->
         <div class = "meat">
           <div class = "padder20"></div>
-          <form name = "login" onsubmit="return validateForm()" action = "#" method = "post">
+          <form name = "login" id = "login" action = "#" method = "post">
             <h2>Login</h2>
             <br>
 
-            <h5>Email</h5>
-            <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
+            <label for = "email"><h5>Email</h5></label>
+            <input class = "input-control input-sm " type="email" name="email" placeholder = "john@example.com">
             <div class = "clear"></div>
             <br>
 
-            <h5>Password</h5>
+            <label for = "password"><h5>Password</h5></label>
             <input class = "input-control input-sm " type="password" name="password">
             <div class = "clear"></div>
             <br>
@@ -53,43 +56,45 @@
 </html>
 
 <script type="text/javascript">
-  /** Various functions for form validation */
   $(document).ready(function() {
-    // Remove the error class when focusing on email input
-    $("input[name='email']").focus(function() {
-      $(this).removeClass("has-error");
-    });
+    $("#login").validate({
+      rules: {
+        // email: "required",
+        // password: "required",
+      
+        email: {
+          required: true,
+          email: true
+        },
+        
+        password: {
+          required: true,
+          minlength: 5
+        }  
+      },
+      
+      messages: {
+        //firstname: "Please enter your firstname",
+        //lastname: "Please enter your lastname",
+        
+        password: {
+          required: "Please provide a password",
+          minlength: "Your password must be at least 5 characters long"
+        },
+        
+        email: "Please enter a valid email address"
+      },
 
-    // Remove the error class when focusing on password input
-    $("input[name='password']").focus(function() {
-      $(this).removeClass("has-error");
+      errorPlacement: function(error, element) {
+          $(element).after("<div class = 'clear'></div>", error);
+          // if (element.attr("name") == "fname" || element.attr("name") == "lname" ) {
+          //   error.insertAfter("#lastname");
+          // } else {
+          //   error.insertAfter(element);
+          // }
+        }
     });
   });
-
-
-  /** 
-   * To determine if every required input has been filled correctly.
-   * 
-   * @author Nick Alekhine
-   * @version 2014-02-04
-   * 
-   */
-  function validateForm() {
-    var hasErrors = false;
-    var email = document.forms["login"]["email"].value;
-    var password = document.forms["login"]["password"].value;
-
-    if (email == null || email == "") {
-      $("input[name='email']").addClass("has-error");
-      hasErrors = true;
-    }
-    if (password == null || password == "") {
-      $("input[name='password']").addClass("has-error");
-      hasErrors = true;
-    }
-
-    return !hasErrors;
-  }
 </script>
 
 
