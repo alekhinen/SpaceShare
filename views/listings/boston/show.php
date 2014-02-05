@@ -15,6 +15,10 @@
         <!-- Page Specific Stylesheets -->
         <link rel="stylesheet" type="text/css" href="/assets/stylesheets/listings.css">
 
+        <!-- JQuery Validation -->
+        <script language="javascript" type="text/javascript" src="/assets/javascripts/validation/jquery.validate.min.js"></script>
+        <script language="javascript" type="text/javascript" src="/assets/javascripts/validation/additional-methods.min.js"></script>
+
        <title>205 Portland Street</title>
    </head> 
    <body>
@@ -73,16 +77,16 @@
           <form id = "costCalculator" style = "float:left;">
             <h2>Calculate Your Total Cost</h2>
             <br>
-            <h5>Rental Rate</h5>
+            <label for = "cost">Rental Rate</label>
             <p class = "cost">$19 / day</p>
             <div class = "clear"></div>
 
-            <h5>Move-In Date</h5>
+            <label for = "moveIn">Move-In Date</label>
             <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
             <div class = "clear"></div>
             <br>
 
-            <h5>Move-Out Date</h5>
+            <label for = "moveOut">Move-Out Date</label>
             <input class = "input-control input-sm " type="date" name="moveOut" placeholder = "MM/DD/YYYY">
             <div class = "clear"></div>
             <br>
@@ -97,40 +101,27 @@
             </div>
           </form>
 
-          <form action="requestSpace.php" id = "requestSpace" style = "float:right;width:420px">
+          <form id = "requestSpace" name = "requestSpace" style = "float:right;width:420px">
             <h2>Request This Space</h2>
             <br>
-            <h5>Rental Rate</h5>
-            <p class = "cost">$19 / day</p>
-            <div class = "clear"></div>
-
-            <h5>Move-In Date</h5>
-            <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
-            <div class = "clear"></div>
-            <br>
-
-            <h5>Move-Out Date</h5>
-            <input class = "input-control input-sm " type="date" name="moveOut" placeholder = "MM/DD/YYYY">
-            <div class = "clear"></div>
-            <br>
-
-            <h5>Email</h5>
+            <label for = "email">Email</label>
             <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
             <div class = "clear"></div>
             <br>
 
-            <h5>First Name</h5>
-            <input class = "input-control input-sm " type="text" name="firstName" placeholder = "John">
+            <label for = "name">Name</label>
+            <input class = "input-control input-sm " type="text" name="name" placeholder = "John Appleseed">
             <div class = "clear"></div>
             <br>
 
-            <h5>Last Name</h5>
-            <input class = "input-control input-sm " type="text" name="lastName" placeholder = "Appleseed">
+            <label for = "phoneNumber">Phone Number</label>
+            <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555">
             <div class = "clear"></div>
             <br>
 
-            <h5>Phone Number</h5>
-            <input class = "input-control input-sm " type="text" name="lastName" placeholder = "555-555-5555">
+            <label for = "message">Message</label>
+            <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for 205 Portland Street. 
+            </textarea>
             <div class = "clear"></div>
             <br>
 
@@ -214,3 +205,53 @@
       <?php include_once($path . '/views/partials/footer.php'); ?>
    </body>
 </html>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#requestSpace").validate({
+      rules: {
+
+        email: {
+          required: true,
+          email: true
+        },
+
+        name: {
+          required: true
+        },
+
+        phoneNumber: {
+         required: true,
+         phoneUS: true
+        },
+        
+        message: {
+          required: true,
+          minlength: 5
+        }  
+      },
+      
+      messages: {
+
+        email: "Please enter a valid email address",
+        name: "Please provide a first and last name",
+        
+        phoneNumber: {
+         required: "Please provide a phone number",
+         phoneUS: "Please enter a valid US phone number"
+        },
+        
+        message: {
+          required: "Please provide a message to the owner"
+        }
+        
+        
+      },
+
+      errorPlacement: function(error, element) {
+          $(element).after("<div class = 'clear'></div>", error);
+        }
+    });
+  });
+</script>

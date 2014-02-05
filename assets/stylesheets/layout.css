@@ -258,6 +258,12 @@ form {
         float:right;
     }
 
+    form textarea {
+        float: right;
+        font-size: 12px;
+        line-height: 18px !important;
+    }
+
 
 #costCalculator {
     width: 420px;
