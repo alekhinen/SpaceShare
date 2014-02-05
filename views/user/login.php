@@ -16,6 +16,7 @@
 
         <!-- JQuery Validation -->
         <script language="javascript" type="text/javascript" src="/assets/javascripts/validation/jquery.validate.min.js"></script>
+        <script language="javascript" type="text/javascript" src="/assets/javascripts/validation/additional-methods.min.js"></script>
 
        <title>Login</title>
    </head> 
@@ -32,12 +33,12 @@
             <h2>Login</h2>
             <br>
 
-            <label for = "email"><h5>Email</h5></label>
+            <label for = "email">Email</label>
             <input class = "input-control input-sm " type="email" name="email" placeholder = "john@example.com">
             <div class = "clear"></div>
             <br>
 
-            <label for = "password"><h5>Password</h5></label>
+            <label for = "password">Password</label>
             <input class = "input-control input-sm " type="password" name="password">
             <div class = "clear"></div>
             <br>
@@ -55,13 +56,15 @@
   </body>
 </html>
 
+
+
+
+
 <script type="text/javascript">
   $(document).ready(function() {
     $("#login").validate({
       rules: {
-        // email: "required",
-        // password: "required",
-      
+
         email: {
           required: true,
           email: true
@@ -74,8 +77,6 @@
       },
       
       messages: {
-        //firstname: "Please enter your firstname",
-        //lastname: "Please enter your lastname",
         
         password: {
           required: "Please provide a password",
@@ -87,11 +88,6 @@
 
       errorPlacement: function(error, element) {
           $(element).after("<div class = 'clear'></div>", error);
-          // if (element.attr("name") == "fname" || element.attr("name") == "lname" ) {
-          //   error.insertAfter("#lastname");
-          // } else {
-          //   error.insertAfter(element);
-          // }
         }
     });
   });
