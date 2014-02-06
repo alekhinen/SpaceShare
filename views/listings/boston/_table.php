@@ -39,7 +39,7 @@
     </div>
     <br>
     <div class = "btn btn-secondary">
-      <a href = "show.php" class = "nothing">Request This Space</a>
+      <a href = "show.php#requestSpace" class = "nothing">Request This Space</a>
     </div>
   </center>
 
