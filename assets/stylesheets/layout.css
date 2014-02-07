@@ -226,6 +226,7 @@ img.logo {
 
 /* FORM ********************************************************************/
 form {
+    position:relative;
     padding: 40px;
     width: 500px;
     margin: 20px auto;
@@ -262,6 +263,17 @@ form {
         float: right;
         font-size: 12px;
         line-height: 18px !important;
+    }
+
+    .formData {
+        position:relative;
+    }
+
+    .success {
+        background-color: #DADBDE;
+        width:100px;
+        height:100px;
+        display:none;
     }
 
 

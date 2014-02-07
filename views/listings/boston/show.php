@@ -101,35 +101,37 @@
             </div>
           </form>
 
-          <form id = "requestSpace" name = "requestSpace" style = "float:right;width:420px">
-            <h2>Request This Space</h2>
-            <br>
-            <label for = "email">Email</label>
-            <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
-            <div class = "clear"></div>
-            <br>
+          <form id = "requestSpace" name = "requestSpace" action = "javascript:handleClick()" style = "float:right;width:420px">
+            <div class = "formData">
+              <h2>Request This Space</h2>
+              <br>
+              <label for = "email">Email</label>
+              <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
+              <div class = "clear"></div>
+              <br>
 
-            <label for = "name">Name</label>
-            <input class = "input-control input-sm " type="text" name="name" placeholder = "John Appleseed">
-            <div class = "clear"></div>
-            <br>
+              <label for = "name">Name</label>
+              <input class = "input-control input-sm " type="text" name="name" placeholder = "John Appleseed">
+              <div class = "clear"></div>
+              <br>
 
-            <label for = "phoneNumber">Phone Number</label>
-            <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555">
-            <div class = "clear"></div>
-            <br>
+              <label for = "phoneNumber">Phone Number</label>
+              <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555">
+              <div class = "clear"></div>
+              <br>
 
-            <label for = "message">Message</label>
-            <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for 205 Portland Street. 
-            </textarea>
-            <div class = "clear"></div>
-            <br>
+              <label for = "message">Message</label>
+              <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for 205 Portland Street. 
+              </textarea>
+              <div class = "clear"></div>
+              <br>
 
-            <input type = "submit" id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;"/>
-            <div class = "clear"></div>
+              <input type = "submit" id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;"/>
+              <div class = "clear"></div>
+            </div>
 
-            <div id = "computedCost">
-                
+            <div id = "success" class = "success">
+                success!
             </div>
           </form>
           <div class = "clear"></div>
@@ -209,7 +211,12 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+    ///////////////////////////////////////////////////////////////////////////
+    // Validation /////////////////////////////////////////////////////////////
+    
     $("#requestSpace").validate({
+      
+      // Rules ////////////////////////////////////////////////////////////////
       rules: {
 
         email: {
@@ -232,6 +239,8 @@
         }  
       },
       
+
+      // Error Messages ///////////////////////////////////////////////////////
       messages: {
 
         email: "Please enter a valid email address",
@@ -249,9 +258,67 @@
         
       },
 
+
+      // Error Message Placement //////////////////////////////////////////////
       errorPlacement: function(error, element) {
-          $(element).after("<div class = 'clear'></div>", error);
+        $(element).after("<div class = 'clear'></div>", error);
+      },
+
+
+      // AJAX Submission Handler //////////////////////////////////////////////
+      submitHandler: function(event) {
+        // variable to hold request
+        var request;
+
+        // abort any pending request
+        if (request) {
+            request.abort();
         }
+        // setup some local variables
+        var $form = $(this);
+        // let's select and cache all the fields
+        var $inputs = $form.find("input, select, button, textarea");
+        // serialize the data in the form
+        var serializedData = $form.serialize();
+
+        // let's disable the inputs for the duration of the ajax request
+        $inputs.prop("disabled", true);
+
+        // fire off the request to /form.php
+        request = $.ajax({
+            url: "requestSpace.php",
+            type: "post",
+            data: serializedData
+        });
+
+        // callback handler that will be called on success
+        request.done(function (response, textStatus, jqXHR){
+            // log a message to the console
+            console.log("Hooray, it worked!");
+            $(".formData").slideToggle(1000);
+            $("#success").slideToggle(1000);
+        });
+
+        // callback handler that will be called on failure
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            // log the error to the console
+            console.error(
+                "The following error occured: "+
+                textStatus, errorThrown
+            );
+        });
+
+        // callback handler that will be called regardless
+        // if the request failed or succeeded
+        request.always(function () {
+            // reenable the inputs
+            $inputs.prop("disabled", false);
+        });
+
+        // prevent default posting of form
+        event.preventDefault();
+      }
     });
+
   });
 </script>
