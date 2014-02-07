@@ -101,7 +101,7 @@
             </div>
           </form>
 
-          <form id = "requestSpace" name = "requestSpace" action = "javascript:handleClick()" style = "float:right;width:420px">
+          <form id = "requestSpace" name = "requestSpace" action = "processRequestSpace.php" style = "float:right;width:420px">
             <div class = "formData">
               <h2>Request This Space</h2>
               <br>
@@ -131,7 +131,8 @@
             </div>
 
             <div id = "success" class = "success">
-                success!
+                <h1>Message sent!</h1>
+                <p>Your message has been sent to the listing owner. </p>
             </div>
           </form>
           <div class = "clear"></div>
@@ -266,16 +267,9 @@
 
 
       // AJAX Submission Handler //////////////////////////////////////////////
-      submitHandler: function(event) {
-        // variable to hold request
-        var request;
-
-        // abort any pending request
-        if (request) {
-            request.abort();
-        }
+      submitHandler: function(form) {
         // setup some local variables
-        var $form = $(this);
+        var $form = $(form);
         // let's select and cache all the fields
         var $inputs = $form.find("input, select, button, textarea");
         // serialize the data in the form
@@ -286,7 +280,7 @@
 
         // fire off the request to /form.php
         request = $.ajax({
-            url: "requestSpace.php",
+            url: "processRequestSpace.php",
             type: "post",
             data: serializedData
         });
