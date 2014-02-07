@@ -161,17 +161,8 @@
              * @author Nick Alekhine
              */
             var daysBetween = function(moveIn, moveOut) {
-              
-                // separate moveIn date
-                //var moveInYear = moveIn[0];
-                //var moveInMonth = moveIn[1] - 1; // makes the months 0 - 11
-                //var moveInDay = moveIn[2];
-                var moveInDate = new Date(moveIn[0], moveIn[1] - 1, moveIn[2]);
 
-                // separate moveOut date
-                //var moveOutYear = moveOut[0];
-                //var moveOutMonth = moveOut[1] - 1; // makes the months 0 - 11
-                //var moveOutDay = moveOut[2];
+                var moveInDate = new Date(moveIn[0], moveIn[1] - 1, moveIn[2]);
                 var moveOutDate = new Date(moveOut[0], moveOut[1] - 1, moveOut[2]);
 
 
