@@ -161,24 +161,42 @@
              * @author Nick Alekhine
              */
             var daysBetween = function(moveIn, moveOut) {
-                var result = 0;
-
+              
                 // separate moveIn date
-                var moveInYear = moveIn[0];
-                var moveInMonth = moveIn[1];
-                var moveInDay = moveIn[2];
+                //var moveInYear = moveIn[0];
+                //var moveInMonth = moveIn[1] - 1; // makes the months 0 - 11
+                //var moveInDay = moveIn[2];
+                var moveInDate = new Date(moveIn[0], moveIn[1] - 1, moveIn[2]);
 
                 // separate moveOut date
-                var moveOutYear = moveOut[0];
-                var moveOutMonth = moveOut[1];
-                var moveOutDay = moveOut[2];
+                //var moveOutYear = moveOut[0];
+                //var moveOutMonth = moveOut[1] - 1; // makes the months 0 - 11
+                //var moveOutDay = moveOut[2];
+                var moveOutDate = new Date(moveOut[0], moveOut[1] - 1, moveOut[2]);
 
-                // calculate the amount of days inbetween moveOut and moveIn
-                result += moveOutDay - moveInDay;
-                result += (moveOutMonth - moveInMonth) * 30; // 30 is a rough estimate.
-                result += (moveOutYear - moveInYear) * 365;
 
-                return result;
+                // Convert both dates to milliseconds
+                var moveInDate_ms = moveInDate.getTime();
+                var moveOutDate_ms = moveOutDate.getTime();
+
+
+                // Calculate the difference in milliseconds
+                var difference_ms = moveOutDate_ms - moveInDate_ms;
+                
+                //take out milliseconds
+                difference_ms = difference_ms/1000;
+                var seconds = Math.floor(difference_ms % 60);
+                
+                // take out seconds
+                difference_ms = difference_ms/60; 
+                var minutes = Math.floor(difference_ms % 60);
+                
+                // take out minutes
+                difference_ms = difference_ms/60; 
+                var hours = Math.floor(difference_ms % 24);  
+                var days = Math.floor(difference_ms/24);
+
+                return days;
             }
 
             /** 
