@@ -58,4 +58,4 @@ Thumbs.db
 
 # Insecure Files #
 ##################
-connect.php
+db_connect.php
