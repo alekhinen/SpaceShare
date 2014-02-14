@@ -1,6 +1,8 @@
 <?php 
   // Fix for linking files with paths
   $path = $_SERVER['DOCUMENT_ROOT']; 
+
+  include_once($path . '/includes/sessionStarter.php');
 ?>
 
 <!-- Declare DOCTYPE to be HTML5 -->
