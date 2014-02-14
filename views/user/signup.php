@@ -1,6 +1,11 @@
 <?php 
   // Fix for linking files with paths
   $path = $_SERVER['DOCUMENT_ROOT']; 
+
+
+  // include_once($path . "/includes/functions.php");
+  // could use <?php echo esc_url($_SERVER['PHP_SELF']); 
+  include_once 'process_signup.php'
 ?>
 
 <!-- Declare DOCTYPE to be HTML5 -->
@@ -28,7 +33,7 @@
 
         <!-- Meat -->
         <div class = "meat">
-          <form name = "signup" id = "signup" method = "post" action = "#">
+          <form name = "signup" id = "signup" method = "post" action = "process_signup.php">
             <h2>Sign Up</h2>
             <br>
 
@@ -38,17 +43,17 @@
             <br>
 
             <label for = "firstName">First Name</label>
-            <input class = "input-control input-sm " type="text" name="firstName" placeholder = "John">
+            <input class = "input-control input-sm " type="text" name="first_name" placeholder = "John">
             <div class = "clear"></div>
             <br>
 
             <label for = "lastName">Last Name</label>
-            <input class = "input-control input-sm " type="text" name="lastName" placeholder = "Appleseed">
+            <input class = "input-control input-sm " type="text" name="last_name" placeholder = "Appleseed">
             <div class = "clear"></div>
             <br>
 
             <label for = "phoneNumber">Phone Number</label>
-            <input class = "input-control input-sm" type="text" name="phoneNumber" placeholder = "555-555-5555">
+            <input class = "input-control input-sm" type="text" name="phone_number" placeholder = "555-555-5555">
             <div class = "clear"></div>
             <br>
 

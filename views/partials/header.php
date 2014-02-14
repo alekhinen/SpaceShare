@@ -10,8 +10,21 @@
   </ul>
 
   <ul class = "nav pull-right">
-    <li><a href = "/views/user/signup.php">Sign Up</a></li>
-    <li><a href = "/views/user/login.php">Log In</a></li>
+    <?php 
+      if (isset($curuser)) {
+        ?>
+        <li><a><?php echo "$curuser" ?></a></li>
+        <li><a href = "/views/user/logout.php">Logout</a></li>
+        <?php
+      }
+      else {
+    ?>
+        <li><a href = "/views/user/signup.php">Sign Up</a></li>
+        <li><a href = "/views/user/login.php">Log In</a></li>
+    <?php 
+      }
+    ?>
+
     <li><a href = "#">List A Space</a></li>
   </ul>
 

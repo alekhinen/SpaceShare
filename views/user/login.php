@@ -29,7 +29,7 @@
         <!-- Meat -->
         <div class = "meat">
           <div class = "padder20"></div>
-          <form name = "login" id = "login" action = "#" method = "post">
+          <form name = "login" id = "login" action = "process_login.php" method = "post">
             <h2>Login</h2>
             <br>
 
