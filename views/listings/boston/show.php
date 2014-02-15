@@ -107,26 +107,58 @@
             <div class = "formData">
               <h2>Request This Space</h2>
               <br>
-              <label for = "email">Email</label>
-              <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
-              <div class = "clear"></div>
-              <br>
+              <?php 
+              if (isset($curuser)) {
+                $email = $_SESSION['email'];
+                $name = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+              ?>
+                <label for = "email">Email</label>
+                <input class = "input-control input-sm " type="text" name="email" value = "<?php echo "$email"; ?>">
+                <div class = "clear"></div>
+                <br>
 
-              <label for = "name">Name</label>
-              <input class = "input-control input-sm " type="text" name="name" placeholder = "John Appleseed">
-              <div class = "clear"></div>
-              <br>
+                <label for = "name">Name</label>
+                <input class = "input-control input-sm " type="text" name="name" value = "<?php echo "$name"; ?>">
+                <div class = "clear"></div>
+                <br>
 
-              <label for = "phoneNumber">Phone Number</label>
-              <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555">
-              <div class = "clear"></div>
-              <br>
+                <label for = "phoneNumber">Phone Number</label>
+                <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555">
+                <div class = "clear"></div>
+                <br>
 
-              <label for = "message">Message</label>
-              <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for 205 Portland Street. 
-              </textarea>
-              <div class = "clear"></div>
-              <br>
+                <label for = "message">Message</label>
+                <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for 205 Portland Street. 
+                </textarea>
+                <div class = "clear"></div>
+                <br>
+              <?php 
+              }
+              else {
+              ?>
+                <label for = "email">Email</label>
+                <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
+                <div class = "clear"></div>
+                <br>
+
+                <label for = "name">Name</label>
+                <input class = "input-control input-sm " type="text" name="name" placeholder = "John Appleseed">
+                <div class = "clear"></div>
+                <br>
+
+                <label for = "phoneNumber">Phone Number</label>
+                <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555">
+                <div class = "clear"></div>
+                <br>
+
+                <label for = "message">Message</label>
+                <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for 205 Portland Street. 
+                </textarea>
+                <div class = "clear"></div>
+                <br>
+              <?php
+              }
+              ?>
 
               <input type = "submit" id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;"/>
               <div class = "clear"></div>

@@ -77,13 +77,15 @@ function login($email, $password, $mysqli) {
                 $first_name = preg_replace("/[^a-zA-Z0-9_\-]+/", 
                                          "", 
                                          $first_name);
+                $_SESSION['first_name'] = $first_name;
                 // XSS protection as we might print this value
                 $last_name = preg_replace("/[^a-zA-Z0-9_\-]+/", 
                                          "", 
                                          $last_name);
-                $_SESSION['first_name'] = $first_name;
                 $_SESSION['last_name'] = $last_name;
-                // $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
+
+                $_SESSION['email'] = $email;
+
                 $_SESSION['login_string'] = crypt($db_password, $user_browser);
                 // Login successful.
                 return true;
@@ -154,7 +156,8 @@ function login_check($mysqli) {
     // Check if all session variables are set 
     if (isset($_SESSION['user_id'], 
               $_SESSION['first_name'], 
-              $_SESSION['last_name'], 
+              $_SESSION['last_name'],
+              $_SESSION['email'], 
               $_SESSION['login_string'])) {
  
         $user_id = $_SESSION['user_id'];
