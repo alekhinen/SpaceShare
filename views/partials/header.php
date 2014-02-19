@@ -15,6 +15,7 @@
         ?>
         <li><a><?php echo "$curuser" ?></a></li>
         <li><a href = "/views/user/logout.php">Logout</a></li>
+        <li><a href = "/views/listings/new.php">List A Space</a></li>
         <?php
       }
       else {
@@ -24,8 +25,6 @@
     <?php 
       }
     ?>
-
-    <li><a href = "#">List A Space</a></li>
   </ul>
 
   <div class = "clear"></div>
