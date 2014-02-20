@@ -39,7 +39,7 @@
             else {
               ?>
 
-                <form name = "listing" id = "listing" method = "post" action = "process_new.php">
+                <form name = "listing" id = "listing" method = "post" action = "process_new.php" enctype="multipart/form-data">
                   <h2>List A Space </h2>
                   <br>
 
@@ -83,7 +83,12 @@
                   <div class = "clear"></div>
                   <br>
 
-                  <input class = "input-control input-sm" type="hidden" name="creator_id" value = "<?php echo "$user_id"; ?>">
+                  <label for="image">Image:</label>
+                  <input class = "btn btn-primary" type="file" name="image" id="image"><br>
+                  <div class = "clear"></div>
+                  <br>
+
+                  <input type="hidden" name="creator_id" value = "<?php echo "$user_id"; ?>">
 
                   <input type = "submit" value = "Submit" class = "btn btn-primary" style = "width:263px;"/>
                   <div class = "clear"></div>
@@ -134,7 +139,8 @@
           required: true,
           number: true
         },
-        description: "required"
+        description: "required",
+        image: "required"
       },
       
       messages: {
@@ -156,7 +162,8 @@
           required: "Please enter valid square footage",
           number: "Enter a number value for square footage"
         },
-        description: "Please enter a valid description"
+        description: "Please enter a valid description",
+        image: "Please upload a jpeg, gif, or png."
         
       },
 

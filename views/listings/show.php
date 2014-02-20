@@ -19,15 +19,21 @@
 
   if ($result) {
     while ($row = $result->fetch_assoc()) {
+      $creator_id = $row['creator_id'];
       $street = $row['street'];
       $city = $row['city'];
       $state = $row['state'];
       $zip = $row['zip'];
+      $rate = $row['rate'];
+      $footage = $row['square_footage'];
+      $description = $row['description'];
+      $amenities = $row['amenities'];
+      $image = $row['image'];
     }
     // Free result set
     $result->free();
 
-    include 'views/_show.php';
+    include '_show.php';
 
   }
   else {
