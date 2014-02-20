@@ -20,7 +20,7 @@
         <script language="javascript" type="text/javascript" src="/assets/javascripts/validation/jquery.validate.min.js"></script>
         <script language="javascript" type="text/javascript" src="/assets/javascripts/validation/additional-methods.min.js"></script>
 
-       <title>Sign Up</title>
+       <title>List A Space</title>
    </head> 
    <body>
       <div class = "wrapper">
@@ -43,32 +43,49 @@
                   <h2>List A Space </h2>
                   <br>
 
-                  <label for = "street">Street</label>
+                  <label for = "street">Street*</label>
                   <input class = "input-control input-sm " type="text" name="street" placeholder = "205 Portland Street">
                   <div class = "clear"></div>
                   <br>
 
-                  <label for = "city">City</label>
+                  <label for = "city">City*</label>
                   <input class = "input-control input-sm " type="text" name="city" placeholder = "Boston">
                   <div class = "clear"></div>
                   <br>
 
-                  <label for = "State">State</label>
+                  <label for = "State">State*</label>
                   <input class = "input-control input-sm " type="text" name="state" placeholder = "Massachusetts">
                   <div class = "clear"></div>
                   <br>
 
-                  <label for = "zip">Zip Code</label>
+                  <label for = "zip">Zip Code*</label>
                   <input class = "input-control input-sm" type="text" name="zip" placeholder = "02130">
                   <div class = "clear"></div>
                   <br>
 
-                  <label for = "password">Password</label>
-                  <input class = "input-control input-sm " type="password" name="password" placeholder = "Must be longer than 5 characters">
+                  <label for = "rate">Daily Rate*</label>
+                  <input class = "input-control input-sm" type="text" name="rate" placeholder = "$19 (do not enter the $ sign)">
                   <div class = "clear"></div>
                   <br>
 
-                  <input type = "submit" value = "Login" class = "btn btn-primary" style = "width:263px;"/>
+                  <label for = "footage">Square Footage*</label>
+                  <input class = "input-control input-sm" type="text" name="footage" placeholder = "1500">
+                  <div class = "clear"></div>
+                  <br>
+
+                  <label for = "amenities">Amenities</label>
+                  <textarea class = "input-control input-sm" name="amenities" rows = "6" placeholder = "e.g. Wi-Fi, 2 Bathrooms"></textarea>
+                  <div class = "clear"></div>
+                  <br>
+
+                  <label for = "description">Description*</label>
+                  <textarea class = "input-control input-sm" name="description" rows = "6" placeholder = "A short description of the space"></textarea>
+                  <div class = "clear"></div>
+                  <br>
+
+                  <input class = "input-control input-sm" type="hidden" name="creator_id" value = "<?php echo "$user_id"; ?>">
+
+                  <input type = "submit" value = "Submit" class = "btn btn-primary" style = "width:263px;"/>
                   <div class = "clear"></div>
                 </form>
 
@@ -97,44 +114,49 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $("#signup").validate({
+    $("#listing").validate({
       rules: {
 
-        email: {
+        street: "required",
+        city: "required",
+        state: "required",
+        zip: {
           required: true,
-          email: true
+          minlength: 5,
+          maxlength: 5,
+          number: true
         },
-
-        firstName: "required",
-        lastName: "required",
-
-        phoneNumber: {
-         required: true,
-         phoneUS: true
-        },
-        
-        password: {
+        rate: {
           required: true,
-          minlength: 5
-        }  
+          number: true
+        },
+        footage: {
+          required: true,
+          number: true
+        },
+        description: "required"
       },
       
       messages: {
 
-        email: "Please enter a valid email address",
-        firstName: "Please provide a first name",
-        lastName: "Please provide a last name",
-        
-        phoneNumber: {
-         required: "Please provide a phone number",
-         phoneUS: "Please enter a valid US phone number"
+        street: "Please enter a valid street address",
+        city: "Please enter a valid city",
+        state: "Please enter a valid US state",
+        zip: {
+          required: "Please provide a zip code",
+          minlength: "Please provide a valid zip code",
+          maxlength: "Please provide a valid zip code",
+          number: "Please provide a valid zip code"
         },
-        
-        password: {
-          required: "Please provide a password",
-          minlength: "Your password must be at least 5 characters long"
-        }
-        
+        rate: {
+          required: "Please enter a valid rate",
+          number: "Please enter just the number value (no $)."
+        },
+        footage: {
+          required: "Please enter valid square footage",
+          number: "Enter a number value for square footage"
+        },
+        description: "Please enter a valid description"
         
       },
 
