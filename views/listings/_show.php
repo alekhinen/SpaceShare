@@ -303,7 +303,7 @@
 
         // fire off the request to /form.php
         request = $.ajax({
-            url: "processRequestSpace.php",
+            url: "process_request_space.php",
             type: "post",
             data: serializedData
         });

@@ -15,7 +15,7 @@
 
     <div class = "studioListing">
       <h2><?php echo "$street, $city, $state" ?></h2>
-      <h2 class = "price">$<?php echo "$rate" ?>/ day</h2>
+      <h2 class = "price">$<?php echo "$rate" ?> / day</h2>
       <div class = "smallImage">
         <div style = "width:100%;height:100%;overflow:hidden">
           <img src = "<?php echo "$image" ?>" style = "margin-top:-200px"/>
