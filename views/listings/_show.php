@@ -140,6 +140,16 @@
               }
               ?>
 
+              <label for = "moveIn">Move-In Date</label>
+              <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
+              <div class = "clear"></div>
+              <br>
+
+              <label for = "moveOut">Move-Out Date</label>
+              <input class = "input-control input-sm " type="date" name="moveOut" placeholder = "MM/DD/YYYY">
+              <div class = "clear"></div>
+              <br>
+
               <input type = "submit" id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;"/>
               <div class = "clear"></div>
             </div>
@@ -240,6 +250,7 @@
     
     $("#requestSpace").validate({
       
+      /////////////////////////////////////////////////////////////////////////
       // Rules ////////////////////////////////////////////////////////////////
       rules: {
 
@@ -260,10 +271,14 @@
         message: {
           required: true,
           minlength: 5
-        }  
+        },
+
+        moveIn: "required",
+        moveOut: "required" 
       },
       
 
+      /////////////////////////////////////////////////////////////////////////
       // Error Messages ///////////////////////////////////////////////////////
       messages: {
 
@@ -277,18 +292,23 @@
         
         message: {
           required: "Please provide a message to the owner"
-        }
+        },
+
+        moveIn: "Please enter a move in date",
+        moveOut: "Please enter a move out date"
         
         
       },
 
 
+      /////////////////////////////////////////////////////////////////////////
       // Error Message Placement //////////////////////////////////////////////
       errorPlacement: function(error, element) {
         $(element).after("<div class = 'clear'></div>", error);
       },
 
 
+      /////////////////////////////////////////////////////////////////////////
       // AJAX Submission Handler //////////////////////////////////////////////
       submitHandler: function(form) {
         // setup some local variables
