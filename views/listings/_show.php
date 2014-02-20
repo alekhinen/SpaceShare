@@ -43,7 +43,7 @@
                 <ul style = "float:left">
                     <li><?php echo "$footage" ?> sq. ft.</li>
                     <li><?php echo "$amenities" ?></li>
-                    <li>(555) 555-5555 <br> test@example.com</li>
+                    <li><?php echo "$phone_number" ?><br><?php echo "$email" ?></li>
                 </ul>
                 <div class = "clear"></div>
             </div>
@@ -216,7 +216,7 @@
 
                 // calculate the cost
                 var totalDays = daysBetween(moveIn, moveOut);
-                var dailyRate = 19;
+                var dailyRate = <?php echo "$rate"?>;
                 var result = totalDays * dailyRate;
 
                 // clears the div

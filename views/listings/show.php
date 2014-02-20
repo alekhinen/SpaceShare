@@ -33,12 +33,26 @@
     // Free result set
     $result->free();
 
+    $query = "SELECT phone_number, email, first_name, last_name FROM users WHERE id = '$creator_id'";
+    $result = $mysqli->query($query);
+
+    if ($result) {
+      while ($row = $result->fetch_assoc()) {
+        $phone_number = $row['phone_number'];
+        $email = $row['email'];
+        $first_name = $row['first_name'];
+        $last_name = $row['last_name'];
+      }
+    }
+
+    $result->free();
+
     include '_show.php';
 
   }
   else {
     echo "can't find it";
-    // header('Location: ../../index.php');
+    header('Location: ../../index.php');
   }
 
 ?>

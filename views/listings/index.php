@@ -1,36 +1,29 @@
-<?php 
+<?php
   // Fix for linking files with paths
   $path = $_SERVER['DOCUMENT_ROOT']; 
 
+  include_once($path . "/includes/db_connect.php");
+  include_once($path . "/includes/functions.php");
   include_once($path . '/includes/sessionStarter.php');
+
+  // Test for errors
+  if(mysqli_connect_errno()){
+    echo mysqli_connect_error();
+  }
+
+  /////////////////////////////////////////////////////////////////////////////
+  // Get the ID ///////////////////////////////////////////////////////////////
+  $query = "SELECT * FROM listings ORDER BY timestamp DESC LIMIT 10";
+  $result = $mysqli->query($query);
+
+  if ($result) {
+
+    include '_index.php';
+
+  }
+  else {
+    echo "can't find it";
+    header('Location: ../../index.php');
+  }
+
 ?>
-
-<!-- Declare DOCTYPE to be HTML5 -->
-<!DOCTYPE html>
-
-<html lang="en">
-   <head>
-      <!-- Base Head Elements -->
-      <?php include_once($path . "/views/partials/baseHead.php") ?>
-
-       <title>Studio Listings</title>
-   </head> 
-   <body>
-      <div class = "wrapper">
-        <!-- Header -->
-        <?php include_once($path . '/views/partials/header.php'); ?>
-
-
-        <!-- Meat -->
-        <div class = "meat">
-          <h1 class = "big">Studio Listings</h1>
-          <p>Coming soon...</p>
-        </div>
-        <div class = "padder20"></div>
-        <div class = "push"></div>
-      </div>
-
-      <!-- Footer -->
-      <?php include_once($path . '/views/partials/footer.php'); ?>
-   </body>
-</html>
