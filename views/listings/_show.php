@@ -116,15 +116,16 @@
             </div>
           </form>
 
-          <form id = "requestSpace" name = "requestSpace" action = "processRequestSpace.php" style = "float:right;width:420px">
-            <div class = "formData">
-              <h2>Request This Space</h2>
-              <br>
-              <?php 
-              if (isset($curuser)) {
-                $email = $_SESSION['email'];
-                $name = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
-              ?>
+          <?php 
+          if (isset($curuser)) {
+            $email = $_SESSION['email'];
+            $name = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
+          ?>
+            <form id = "requestSpace" name = "requestSpace" action = "processRequestSpace.php" style = "float:right;width:420px">
+              <div class = "formData">
+                <h2>Request This Space</h2>
+                <br>
+
                 <label for = "email">Email</label>
                 <input class = "input-control input-sm " type="text" name="email" value = "<?php echo "$email"; ?>">
                 <div class = "clear"></div>
@@ -146,62 +147,36 @@
                 <div class = "clear"></div>
                 <br>
 
+                <label for = "moveIn">Move-In Date</label>
+                <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
+                <div class = "clear"></div>
+                <br>
+
+                <label for = "moveOut">Move-Out Date</label>
+                <input class = "input-control input-sm " type="date" name="moveOut" placeholder = "MM/DD/YYYY">
+                <div class = "clear"></div>
+                <br>
+
                 <input type="hidden" name="guest_id" value = "<?php echo "$user_id"; ?>">
                 <input type="hidden" name="listing_id" value = "<?php echo "$id"; ?>">
 
-
-              <?php 
-              }
-              else {
-              ?>
-                <label for = "email">Email</label>
-                <input class = "input-control input-sm " type="text" name="email" placeholder = "john@example.com">
+                <input type = "submit" id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;"/>
                 <div class = "clear"></div>
-                <br>
+              </div>
 
-                <label for = "name">Name</label>
-                <input class = "input-control input-sm " type="text" name="name" placeholder = "John Appleseed">
-                <div class = "clear"></div>
-                <br>
-
-                <label for = "phoneNumber">Phone Number</label>
-                <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555">
-                <div class = "clear"></div>
-                <br>
-
-                <label for = "message">Message</label>
-                <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for 205 Portland Street. 
-                </textarea>
-                <div class = "clear"></div>
-                <br>
-              <?php
-              }
-              ?>
-
-              <label for = "moveIn">Move-In Date</label>
-              <input class = "input-control input-sm " type="date" name="moveIn" placeholder = "MM/DD/YYYY">
-              <div class = "clear"></div>
-              <br>
-
-              <label for = "moveOut">Move-Out Date</label>
-              <input class = "input-control input-sm " type="date" name="moveOut" placeholder = "MM/DD/YYYY">
-              <div class = "clear"></div>
-              <br>
-
-              <input type = "submit" id = "calculate" class = "btn btn-primary" style = "float:right;width:263px;"/>
-              <div class = "clear"></div>
-            </div>
-
-            <div id = "success" class = "success">
-                <h1>Reservation sent!</h1>
-                <p>Your message has been sent to the listing owner. </p>
-            </div>
-            <div id = "nosubmission" class = "success">
-                <h1>Reservation failed!</h1>
-                <p>There are currently other reservations that overlap with your move in and move out days. 
-                However, we have sent an email to you and the listing owner in case there is an opening.</p>
-            </div>
-          </form>
+              <div id = "success" class = "success">
+                  <h1>Reservation sent!</h1>
+                  <p>Your message has been sent to the listing owner. </p>
+              </div>
+              <div id = "nosubmission" class = "success">
+                  <h1>Reservation failed!</h1>
+                  <p>There are currently other reservations that overlap with your move in and move out days. 
+                  However, we have sent an email to you and the listing owner in case there is an opening.</p>
+              </div>
+            </form>
+          <?php 
+          }
+          ?>
           <div class = "clear"></div>
 
         </div>
