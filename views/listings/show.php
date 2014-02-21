@@ -12,7 +12,9 @@
   }
 
   /////////////////////////////////////////////////////////////////////////////
-  // Get the ID ///////////////////////////////////////////////////////////////
+  // Querying /////////////////////////////////////////////////////////////////
+  
+  // Fetching listing data ////////////////////////////////////////////////////
   $id = strip_tags($_GET[id]);
   $query = "SELECT * FROM listings WHERE id = '$id'";
   $result = $mysqli->query($query);
@@ -34,7 +36,11 @@
     // Free result set
     $result->free();
 
-    $query = "SELECT phone_number, email, first_name, last_name FROM users WHERE id = '$creator_id'";
+
+    // Fetching creator data //////////////////////////////////////////////////
+    $query = "SELECT phone_number, email, first_name, last_name 
+              FROM users 
+              WHERE id = '$creator_id'";
     $result = $mysqli->query($query);
 
     if ($result) {
@@ -47,6 +53,12 @@
     }
 
     $result->free();
+
+
+    // Fetching reservations data /////////////////////////////////////////////
+    $query = "SELECT * FROM reservations WHERE listing_id = '$id'";
+    $result = $mysqli->query($query);
+
 
     include '_show.php';
 

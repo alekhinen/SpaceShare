@@ -56,6 +56,39 @@
           </div>
           <div class = "clear"></div>
 
+          <div style = "border-top: 1px solid; margin-top:10px; padding-top:10px;">
+            <h3>Current Reservations</h3>
+            <?php 
+            // if the query from show.php is valid, loop through the data.
+            if ($result) {
+              $num_rows = 0; // to keep track of the number of rows in the query
+
+              // while there is data from the query, loop through it and display it.
+              while ($row = $result->fetch_assoc()) { 
+                $num_rows = $num_rows + 1;
+
+                $res_move_in = date("F d, Y", $row["move_in"]);
+                $res_move_out = date("F d, Y", $row["move_out"]);
+                ?>
+
+                <p><?php echo "$res_move_in"; ?> - <?php echo "$res_move_out"; ?></p>
+
+
+                <?php
+              }
+
+              // if there are no rows, inform the user
+              if ($num_rows == 0) {
+                ?>
+
+                <p>There are no reservations for this listing.</p>
+
+                <?php
+              }
+            }
+            ?>
+          </div>
+
           <form id = "costCalculator" style = "float:left;">
             <h2>Calculate Your Total Cost</h2>
             <br>
@@ -103,12 +136,12 @@
                 <br>
 
                 <label for = "phoneNumber">Phone Number</label>
-                <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555">
+                <input class = "input-control input-sm " type="text" name="phoneNumber" placeholder = "555-555-5555" value = "<?php echo "$phone_number"; ?>">
                 <div class = "clear"></div>
                 <br>
 
                 <label for = "message">Message</label>
-                <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for 205 Portland Street. 
+                <textarea class = "input-control input-sm" name="message" rows = "6">Hello, I am interested in your studio listing for <?php echo "$street"; ?>
                 </textarea>
                 <div class = "clear"></div>
                 <br>
