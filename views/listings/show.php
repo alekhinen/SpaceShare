@@ -19,6 +19,7 @@
 
   if ($result) {
     while ($row = $result->fetch_assoc()) {
+      $id = $row['id'];
       $creator_id = $row['creator_id'];
       $street = $row['street'];
       $city = $row['city'];

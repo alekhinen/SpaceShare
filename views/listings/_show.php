@@ -112,6 +112,11 @@
                 </textarea>
                 <div class = "clear"></div>
                 <br>
+
+                <input type="hidden" name="guest_id" value = "<?php echo "$user_id"; ?>">
+                <input type="hidden" name="listing_id" value = "<?php echo "$id"; ?>">
+
+
               <?php 
               }
               else {
@@ -155,8 +160,13 @@
             </div>
 
             <div id = "success" class = "success">
-                <h1>Message sent!</h1>
+                <h1>Reservation sent!</h1>
                 <p>Your message has been sent to the listing owner. </p>
+            </div>
+            <div id = "nosubmission" class = "success">
+                <h1>Reservation failed!</h1>
+                <p>There are currently other reservations that overlap with your move in and move out days. 
+                However, we have sent an email to you and the listing owner in case there is an opening.</p>
             </div>
           </form>
           <div class = "clear"></div>
@@ -331,9 +341,17 @@
         // callback handler that will be called on success
         request.done(function (response, textStatus, jqXHR){
             // log a message to the console
-            console.log("Hooray, it worked!");
-            $(".formData").slideToggle(1000);
-            $("#success").slideToggle(1000);
+            console.log(response);
+            if (response.indexOf("overlaps") != -1) {
+              console.log("There are overlaps");
+              $(".formData").slideToggle(1000);
+              $("#nosubmission").slideToggle(1000);
+            }
+            else {
+              console.log("Hooray, it worked!");
+              $(".formData").slideToggle(1000);
+              $("#success").slideToggle(1000);
+            }
         });
 
         // callback handler that will be called on failure
