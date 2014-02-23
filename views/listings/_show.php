@@ -118,7 +118,7 @@
 
           <?php 
           if (isset($curuser)) {
-            $email = $_SESSION['email'];
+            $cur_user_email = $_SESSION['email'];
             $name = $_SESSION['first_name'] . " " . $_SESSION['last_name'];
           ?>
             <form id = "requestSpace" name = "requestSpace" action = "processRequestSpace.php" style = "float:right;width:420px">
@@ -127,7 +127,7 @@
                 <br>
 
                 <label for = "email">Email</label>
-                <input class = "input-control input-sm " type="text" name="email" value = "<?php echo "$email"; ?>">
+                <input class = "input-control input-sm " type="text" name="email" value = "<?php echo "$cur_user_email"; ?>">
                 <div class = "clear"></div>
                 <br>
 
@@ -157,6 +157,7 @@
                 <div class = "clear"></div>
                 <br>
 
+                <input type = "hidden" name = "listing_owner_email" value = "<?php echo "$email" ?>">
                 <input type="hidden" name="guest_id" value = "<?php echo "$user_id"; ?>">
                 <input type="hidden" name="listing_id" value = "<?php echo "$id"; ?>">
 

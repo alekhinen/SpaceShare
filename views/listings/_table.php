@@ -45,11 +45,11 @@
 
       <center>
         <div class = "btn btn-primary">
-          <a href = "show.php?id=<?php echo "$id" ?>" class = "nothing">View Listing</a>
+          <a href = "/views/listings/show.php?id=<?php echo "$id" ?>" class = "nothing">View Listing</a>
         </div>
         <br>
         <div class = "btn btn-secondary">
-          <a href = "show.php?id=<?php echo "$id" ?>#requestSpace" class = "nothing">Request This Space</a>
+          <a href = "/views/listings/show.php?id=<?php echo "$id" ?>#requestSpace" class = "nothing">Request This Space</a>
         </div>
       </center>
 
